@@ -28,7 +28,7 @@ public class SortTestUtil {
                 return method;
             }
         }
-        return null;
+        throw new RuntimeException("没有指定的方法，检查一下方法名");
     }
 
     public static void run(int times,Object obj,String methodName){

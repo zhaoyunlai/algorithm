@@ -1,4 +1,4 @@
-package pers.zylai.algorithm.sort.p01bit;
+package pers.zylai.algorithm.sort.bit;
 
 /**
  * @Author: Zhao YunLai
