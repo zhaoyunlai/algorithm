@@ -82,14 +82,33 @@ public class IsPalindromeList {
             fast = fast.next.next;
             slow = slow.next;
         }
-        //此时，slow位于中点的后一个结点或者第二个中点
+        //此时，slow位于中点的后一个结点或者第二个中点。
+        // 也就是说slow位于右半部分链表的第一个结点
         //需要使当前slow指向的结点指向为空，然后将后面的链表反转
+
+        //暂存下一个结点，为了使slow的指向null
+        fast = slow.next;
+        //让结点指向null
         slow.next = null;
-        while(slow!=null){
-
+        Node temp = null;
+        while(fast != null){
+            temp = fast.next;//记录下一个结点
+            fast.next = slow;//当前结点指向前面的节点
+            slow = fast;//前一个结点向前移动
+            fast = temp;//当前结点向前移动
         }
-
-        return false;
+        //开始进行比较，在比较的过程中把链表反转过来
+        temp = head;
+        boolean flag = true;
+        while(slow!=null&&temp!=null){
+            if(slow.value!=temp.value){
+                flag = false;
+                break;
+            }
+            slow = slow.next;
+            temp = temp.next;
+        }
+        return flag;
     }
 
     public static void main(String[] args) {
@@ -103,6 +122,7 @@ public class IsPalindromeList {
 
         System.out.println("1:"+isPalindrome1(head));
         System.out.println("2:"+isPalindrome2(head));
+        System.out.println("3:"+isPalindrome3(head));
     }
 
 }
