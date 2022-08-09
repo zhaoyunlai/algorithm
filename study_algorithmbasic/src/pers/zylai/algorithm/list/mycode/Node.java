@@ -13,13 +13,6 @@ public class Node {
         this.value = value;
     }
 
-    public void printLinkedList(){
-        System.out.print("Linked List: ");
-        Node cur = this;
-        while(cur!=null){
-            System.out.print(cur.value+" ");
-            cur = cur.next;
-        }
-        System.out.println();
+    public Node() {
     }
 }
