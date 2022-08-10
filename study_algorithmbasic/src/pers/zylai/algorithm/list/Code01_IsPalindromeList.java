@@ -1,4 +1,4 @@
-package pers.zylai.algorithm.list.mycode;
+package pers.zylai.algorithm.list;
 
 import java.util.Stack;
 
@@ -8,7 +8,7 @@ import java.util.Stack;
  * @Description:
  * 回文链表的判断
  */
-public class IsPalindromeList {
+public class Code01_IsPalindromeList {
     //需要n个额外空间
     public static boolean isPalindrome1(Node head){
         Stack<Node> stack = new Stack<>();
@@ -136,7 +136,7 @@ public class IsPalindromeList {
 //        head.next.next = new Node(3);
 //        head.next.next.next = new Node(2);
 //        head.next.next.next.next = new Node(1);
-        
+
 
         Node head = NodeUtils.createLinkedList();
         NodeUtils.printLinkedList(head);

@@ -92,9 +92,9 @@ public class LogarithmicDetectorArr {
         if(arr == null || arr1 == null || arr2 == null){
             return ;
         }
-        System.out.println("原始数组arr："+Arrays.toString(arr));
-        System.out.println("排序数组arr1："+Arrays.toString(arr1));
-        System.out.println("排序数组arr2："+Arrays.toString(arr2));
+        System.out.println("原始数组arr:     "+Arrays.toString(arr));
+        System.out.println("我的排序数组arr1："+Arrays.toString(arr1));
+        System.out.println("标准排序数组arr2："+Arrays.toString(arr2));
     }
 
 }

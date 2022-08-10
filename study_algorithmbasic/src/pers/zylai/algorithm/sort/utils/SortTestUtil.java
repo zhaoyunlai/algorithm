@@ -67,6 +67,7 @@ public class SortTestUtil {
             }
         }
         System.out.println(flag ? "Lucky!!! Test"+times+" times, there is no bug . Successful!" : "苦逼得去debug吧");
+        System.out.println("最后一次执行结果如下：");
         LogarithmicDetectorArr.printAllArrays(arr, arr1, arr2);
 
     }

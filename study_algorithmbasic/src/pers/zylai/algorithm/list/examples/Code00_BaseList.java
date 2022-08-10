@@ -1,4 +1,4 @@
-package pers.zylai.algorithm.list;
+package pers.zylai.algorithm.list.examples;
 
 /**
  * @Author: Zhao YunLai

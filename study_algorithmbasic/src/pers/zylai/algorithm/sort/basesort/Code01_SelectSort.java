@@ -1,4 +1,4 @@
-package pers.zylai.algorithm.sort.p02;
+package pers.zylai.algorithm.sort.basesort;
 
 import pers.zylai.algorithm.sort.utils.SortTestUtil;
 

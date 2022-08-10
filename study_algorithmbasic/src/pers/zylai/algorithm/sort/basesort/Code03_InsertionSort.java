@@ -1,4 +1,4 @@
-package pers.zylai.algorithm.sort.p02;
+package pers.zylai.algorithm.sort.basesort;
 
 import pers.zylai.algorithm.sort.utils.SortTestUtil;
 
@@ -16,7 +16,7 @@ public class Code03_InsertionSort {
         }
         for (int i = 1; i < arr.length; i++) {
             /**
-             * 使 0 ~ i上有序
+             * 使 [0,i]上有序
              * 每次j=i，向前插入排序，从而保证0 ~ i上有序
              */
             for(int j=i; j >= 1 && arr[j] < arr[j-1]; j--){
