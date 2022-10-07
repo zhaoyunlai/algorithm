@@ -1,4 +1,4 @@
-package pers.zylai.algorithm.pac01_list.examples;
+package pers.zylai.algorithm.pac01_list.study;
 
 import java.util.HashMap;
 import java.util.HashSet;

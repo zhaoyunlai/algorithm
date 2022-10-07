@@ -1,6 +1,4 @@
-package pers.zylai.algorithm.pac02_sort.utils;
-
-import pers.zylai.algorithm.utils.LogarithmicDetectorArr;
+package pers.zylai.pac01_sort.utils;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

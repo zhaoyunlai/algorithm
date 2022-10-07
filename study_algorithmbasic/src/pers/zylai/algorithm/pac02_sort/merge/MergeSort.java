@@ -1,6 +1,6 @@
 package pers.zylai.algorithm.pac02_sort.merge;
 
-import pers.zylai.algorithm.pac02_sort.utils.SortTestUtil;
+import pers.zylai.algorithm.utils.SortTestUtil;
 
 /**
  * @Author: Zhao YunLai

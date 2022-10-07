@@ -1,4 +1,4 @@
-package pers.zylai.algorithm.pac01_list;
+package pers.zylai.algorithm.pac01_list.node;
 
 import java.util.Scanner;
 

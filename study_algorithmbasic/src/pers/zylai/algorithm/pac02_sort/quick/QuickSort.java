@@ -1,6 +1,6 @@
 package pers.zylai.algorithm.pac02_sort.quick;
 
-import pers.zylai.algorithm.pac02_sort.utils.SortTestUtil;
+import pers.zylai.algorithm.utils.SortTestUtil;
 
 /**
  * @Author: Zhao YunLai
