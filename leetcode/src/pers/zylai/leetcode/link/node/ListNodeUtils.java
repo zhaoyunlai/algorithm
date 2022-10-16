@@ -1,4 +1,4 @@
-package pers.zylai.algorithm.pac01_list.node;
+package pers.zylai.leetcode.link.node;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @Date: 2022/08/09/16:45
  * @Description:
  */
-public class NodeUtils {
+public class ListNodeUtils {
 
     public static Scanner scanner = new Scanner(System.in);
 
@@ -15,10 +15,10 @@ public class NodeUtils {
      * 打印链表
      * @param head 头结点
      */
-    public static void printLinkedList(Node head){
+    public static void printLinkedList(ListNode head){
         System.out.print("LinkedList: ");
         while(head!=null){
-            System.out.print(head.value+" ");
+            System.out.print(head.val +" ");
             head = head.next;
         }
         System.out.println();
@@ -28,17 +28,17 @@ public class NodeUtils {
      * 根据用户输入创建链表
      * @return
      */
-    public static Node createLinkedList(){
+    public static ListNode createLinkedList(){
         System.out.print("Please input the number of Nodes: ");
         int num = scanner.nextInt();
-        Node order = new Node();
-        Node pis = order;
+        ListNode order = new ListNode();
+        ListNode pis = order;
         System.out.println("please input the nodes: ");
         for (int i = 0; i < num; i++) {
             int value = scanner.nextInt();
-            Node node = new Node(value);
-            pis.next = node;
-            pis = node;
+            ListNode listNode = new ListNode(value);
+            pis.next = listNode;
+            pis = listNode;
         }
         return order.next;
     }
@@ -48,16 +48,16 @@ public class NodeUtils {
      * @param size 链表的规格
      * @return 头结点
      */
-    public static Node createOrderLinkedList(int size){
+    public static ListNode createOrderLinkedList(int size){
         if(size < 1){
             return null;
         }
-        Node head = new Node(1);
-        Node finalHead = head;
+        ListNode head = new ListNode(1);
+        ListNode finalHead = head;
         for (int i = 2; i <= size; i++) {
-            Node node = new Node(i);
-            head.next = node;
-            head = node;
+            ListNode listNode = new ListNode(i);
+            head.next = listNode;
+            head = listNode;
         }
         return finalHead;
     }

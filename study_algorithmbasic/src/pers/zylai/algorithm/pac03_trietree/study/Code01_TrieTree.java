@@ -1,27 +1,20 @@
-package pers.zylai.algorithm.pac03_tree.trietree.study;
+package pers.zylai.algorithm.pac03_trietree.study;
 
 import java.util.HashMap;
 
-// 该程序完全正确
-public class Code02_TrieTree {
+// 该程序的对数器跑不过，你能发现bug在哪吗？
+public class Code01_TrieTree {
 
+	// 前缀树节点类型
 	public static class Node1 {
 		public int pass;
 		public int end;
+		//下一个结点的数组
 		public Node1[] nexts;
 
-		// char tmp = 'b'  (tmp - 'a')
 		public Node1() {
 			pass = 0;
 			end = 0;
-			// 0    a
-			// 1    b
-			// 2    c
-			// ..   ..
-			// 25   z
-			// nexts[i] == null   i方向的路不存在
-			// nexts[i] != null   i方向的路存在
-
 			//假设字符串全部为小写字母，所以一个结点最多下面有26条路
 			//就相当于提前建好所有的路，如果这个路通向的结点为空，就认为这条路不存在
 			nexts = new Node1[26];
@@ -39,39 +32,34 @@ public class Code02_TrieTree {
 			if (word == null) {
 				return;
 			}
-			char[] str = word.toCharArray();
+			char[] chs = word.toCharArray();
 			Node1 node = root;
 			node.pass++;
-			int path = 0;
-			for (int i = 0; i < str.length; i++) { // 从左往右遍历字符
-				path = str[i] - 'a'; // 由字符，对应成走向哪条路
-				if (node.nexts[path] == null) {
-					//如果没有结点，就新建结点
-					node.nexts[path] = new Node1();
+			int index = 0;
+			for (int i = 0; i < chs.length; i++) { // 从左往右遍历字符
+				index = chs[i] - 'a'; // 由字符，对应成走向哪条路
+				if (node.nexts[index] == null) {
+					node.nexts[index] = new Node1();
 				}
-				//node向下走，并pass++
-				node = node.nexts[path];
+				node = node.nexts[index];
 				node.pass++;
 			}
 			node.end++;
 		}
 
-		//删除一个单词
 		public void delete(String word) {
-			//先看一下到底有没有这个单词
 			if (search(word) != 0) {
 				char[] chs = word.toCharArray();
 				Node1 node = root;
 				node.pass--;
-				int path = 0;
+				int index = 0;
 				for (int i = 0; i < chs.length; i++) {
-					path = chs[i] - 'a';
-					//沿途p--，如果减完之后p为0，直接将这个结点设置为0，然后直接返回，那么这个以这个结点为根的子树内存会被回收
-					if (--node.nexts[path].pass == 0) {
-						node.nexts[path] = null;
+					index = chs[i] - 'a';
+					if (--node.nexts[index].pass == 0) {
+						node.nexts[index] = null;
 						return;
 					}
-					node = node.nexts[path];
+					node = node.nexts[index];
 				}
 				node.end--;
 			}
@@ -110,7 +98,6 @@ public class Code02_TrieTree {
 				}
 				node = node.nexts[index];
 			}
-			//这里和search一样，只是返回的是pass
 			return node.pass;
 		}
 	}
@@ -246,7 +233,7 @@ public class Code02_TrieTree {
 			int count = 0;
 			for (String cur : box.keySet()) {
 				if (cur.startsWith(pre)) {
-					count += box.get(cur);
+					count++;
 				}
 			}
 			return count;

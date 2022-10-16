@@ -1,4 +1,4 @@
-package pers.zylai.algorithm.pac01_list;
+package pers.zylai.algorithm.pac01_list.study;
 
 import pers.zylai.algorithm.pac01_list.node.Node;
 import pers.zylai.algorithm.pac01_list.node.NodeUtils;
@@ -11,7 +11,7 @@ import java.util.Stack;
  * @Description:
  * 回文链表的判断
  */
-public class Code01_IsPalindromeList {
+public class Code02_IsPalindromeList1 {
     //需要n个额外空间
     public static boolean isPalindrome1(Node head){
         Stack<Node> stack = new Stack<>();

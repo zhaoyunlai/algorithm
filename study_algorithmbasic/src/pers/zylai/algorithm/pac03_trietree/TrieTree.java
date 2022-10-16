@@ -1,4 +1,4 @@
-package pers.zylai.algorithm.pac03_tree.trietree;
+package pers.zylai.algorithm.pac03_trietree;
 
 /**
  * @Author: Zhao YunLai

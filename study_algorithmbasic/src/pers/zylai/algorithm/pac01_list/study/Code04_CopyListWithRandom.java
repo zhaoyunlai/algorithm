@@ -17,6 +17,7 @@ public class Code04_CopyListWithRandom {
 		}
 	}
 
+	//借助容器，空间复杂度较大
 	public static Node copyRandomList1(Node head) {
 		// key 老节点
 		// value 新节点
@@ -38,6 +39,7 @@ public class Code04_CopyListWithRandom {
 		return map.get(head);
 	}
 
+	//这种直接把克隆结点插入到对应结点的后面
 	public static Node copyRandomList2(Node head) {
 		if (head == null) {
 			return null;

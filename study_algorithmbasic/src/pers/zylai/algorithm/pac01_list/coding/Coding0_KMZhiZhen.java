@@ -1,4 +1,4 @@
-package pers.zylai.algorithm.pac01_list;
+package pers.zylai.algorithm.pac01_list.coding;
 
 import pers.zylai.algorithm.pac01_list.node.Node;
 import pers.zylai.algorithm.pac01_list.node.NodeUtils;
@@ -31,6 +31,10 @@ public class Coding0_KMZhiZhen {
         Node slow = head.next;
         Node fast = head.next.next;
 
+        //注意这里的边界判断条件，和fast的初始位置关系很大，
+        // 由于其初始从第三个结点开始，即从奇数点开始，那么边界判断要为fast.next和fast.next.next不为空
+        // 因为，每次快指针都是停在奇数点，如果是偶数个结点，往下看两步，在快到边界时，就不会走到空
+        //如果fast从偶数结点开始，边界判断为fast和next不为空，因为每次快指针都是停在偶数点，检查自己和下一步是否为空即可
         //快指针一次两步，慢指针一次一步
         while(fast.next != null && fast.next.next != null){
             slow = slow.next;
@@ -50,13 +54,24 @@ public class Coding0_KMZhiZhen {
             return head;
         }
         //快慢指针
-        Node slow = head.next;
-        Node fast = head.next;
 
-        while(fast.next != null && fast.next.next != null){
-            slow=slow.next;
-            fast=fast.next.next;
+
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
         }
+
+        //这样写也行，这是给的参考代码，其实没啥差别
+        //Node slow = head.next;
+        //Node fast = head.next;
+        //
+        //while(fast.next != null && fast.next.next != null){
+        //    slow=slow.next;
+        //    fast=fast.next.next;
+        //}
+
 
         return slow;
     }
